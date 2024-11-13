@@ -104,7 +104,7 @@ def select_data(data, num):
     data = data[index]
     return data
 
-def load_data(ratio,channel1,step,scenes,length = 1024,hp = [0,1,2],fault_num = [2, 4, 6],split_rate = [0.7,0.3,0.1]):
+def load_data(ratio,channel1,step,scenes,length = 1024,hp = [0,1,2],fault_num = [2, 4, 6],split_rate = [0.7,0.1,0.2]):
     # 记得修改augmentation中数据的1000
 
     '''
