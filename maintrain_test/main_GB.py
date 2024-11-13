@@ -424,7 +424,7 @@ if __name__ == '__main__':
                                                                                  length=1024, scenes=2)
         # print(train_data.shape)
         a, b, c, d, eval_data, ye1, ye2, ye3, e, f, g, h = predata_GB.load_data(ratio=1, channel1=3, step=512,
-                                                                                length=1024, split_rate=[0.8, 0.1, 0.1],
+                                                                                length=1024, split_rate=[0.7, 0.1, 0.2],
                                                                                 scenes=2)
         train(train_data, yt1, yt2, yt3, eval_data, ye1, ye2, ye3, ratio=ratio, drop_ratio1=0.2, drop_ratio2=0.3,
               heads=8, scene=scene)
