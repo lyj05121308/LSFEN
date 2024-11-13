@@ -415,9 +415,9 @@ def test(test_data,ys1,ys2,ys3,ratio,name,scene):
 
 if __name__ == '__main__':
 
-        # 不同长尾场景
+        # 不同长尾场景 0,1
         scene = 0
-        # 不同不平衡比
+        # 不同不平衡比 20,20,50,100
         ratio = 100
         # 模型训练
         train_data, yt1, yt2, yt3, a, b, c, d, e, f, g, h = predata_GB.load_data(ratio=1, channel1=3, step=512,
