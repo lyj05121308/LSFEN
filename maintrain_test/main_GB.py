@@ -151,7 +151,6 @@ def train(train_data,yt1,yt2,yt3,eval_data,ye1,ye2,ye3,ratio,drop_ratio1,drop_ra
             logit2,cross_data2 = model_task2(feature3,cross_data1)
             logit3,cross_data3 = model_task3(feature3,cross_data2)
 
-            # 分类器输入向量不经过CA
             # feature = Increase_dim.incre_dim(feature)
             pred1 = logit1.argmax(dim=1)
             pred2 = logit2.argmax(dim=1)
