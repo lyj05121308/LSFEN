@@ -419,7 +419,7 @@ if __name__ == '__main__':
         # 不同不平衡比 20,20,50,100
         ratio = 100
         # 模型训练
-        train_data, yt1, yt2, yt3, a, b, c, d, e, f, g, h = predata_GB.load_data(ratio=1, channel1=3, step=512,
+        train_data, yt1, yt2, yt3, a, b, c, d, e, f, g, h = predata_GB.load_data(ratio=ratio, channel1=3, step=512,
                                                                                  length=1024, scenes=2)
         # print(train_data.shape)
         a, b, c, d, eval_data, ye1, ye2, ye3, e, f, g, h = predata_GB.load_data(ratio=1, channel1=3, step=512,
