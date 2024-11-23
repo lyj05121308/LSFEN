@@ -177,6 +177,20 @@ def train(train_data,yt1,yt2,yt3,eval_data,ye1,ye2,ye3,ratio,drop_ratio1,drop_ra
             grad_task2 = torch.cat([g.flatten() for g in grad_task2]).cpu()  # 确保在CPU上
             grad_task3 = torch.cat([g.flatten() for g in grad_task3]).cpu()  # 确保在CPU上
             max_len = max(len(grad_task1), len(grad_task2), len(grad_task3))
+            
+            norm1 = grad_task1.norm(p=2)
+            if norm1 > 0:
+                grad_task1 = grad_task1 / norm1
+
+            norm2 = grad_task2.norm(p=2)
+            if norm2 > 0:
+                grad_task2 = grad_task2 / norm2
+
+            norm3 = grad_task3.norm(p=2)
+            if norm3 > 0:
+                grad_task3 = grad_task3 / norm3
+
+            
             grad_task1 = F.pad(grad_task1, (0, max_len - len(grad_task1)))
             grad_task2 = F.pad(grad_task2, (0, max_len - len(grad_task2)))
             grad_task3 = F.pad(grad_task3, (0, max_len - len(grad_task3)))
