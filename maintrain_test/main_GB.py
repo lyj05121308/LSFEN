@@ -156,14 +156,10 @@ def train(train_data,yt1,yt2,yt3,eval_data,ye1,ye2,ye3,ratio,drop_ratio1,drop_ra
             pred2 = logit2.argmax(dim=1)
             pred3 = logit3.argmax(dim=1)
 
-            w1 = float(w[0])
-            w2 = w[1]
-            w3 = w[2]
 
             loss_task1 = loss_origin(logit1,y1.long())
             loss_task2 = loss_origin(logit2,y2.long())
             loss_task3 = loss_origin(logit3,y3.long())
-            loss = w1*loss_task1+w2*loss_task2+ w3*loss_task3
 
             params_task1 = model_task1.parameters()
             params_task2 = model_task2.parameters()
@@ -200,6 +196,11 @@ def train(train_data,yt1,yt2,yt3,eval_data,ye1,ye2,ye3,ratio,drop_ratio1,drop_ra
                                                            G= stacked_horizontal)
 
             w =w.tolist()
+            
+            w1 = float(w[0])
+            w2 = w[1]
+            w3 = w[2]
+            loss = w1*loss_task1+w2*loss_task2+ w3*loss_task3
 
             loss.backward()
 
